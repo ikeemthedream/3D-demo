@@ -12,6 +12,8 @@ public class MouseLook : MonoBehaviour
     }
 
     public RotationAxes axes = RotationAxes.MouseXandY;
+
+    public float sensitivityHor = 9.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,15 +25,19 @@ public class MouseLook : MonoBehaviour
     {
         if (axes == RotationAxes.MouseX)
         {
-            
+            // horizontal rotation here
+            Debug.Log("Horizontal");
+            transform.Rotate(0, Input.GetAxis("Mouse X")* sensitivityHor, 0);
         }
         else if (axes == RotationAxes.MouseY)
         {
-            
+            // vertical rotation here
+            Debug.Log("Vertical");
         }
         else
         {
-            
+            // both horizontal and vertical rotation here
+            Debug.Log("Both");
         }
     }
 }
